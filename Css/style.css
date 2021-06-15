@@ -105,6 +105,25 @@ img {
     color: var(--ci);
 }
 
+.mnu-fix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    background: rgba(31, 31, 31, 0.815);
+    animation: smooth 1s ease-in-out;
+}
+
+@keyframes smooth {
+    0% {
+        top: -150px;
+    }
+    100% {
+        top: 0px;
+    }
+}
+
 
 /* .mnu .wrapper .tbar .menu ul li:active  .mb {
     opacity: 1;
