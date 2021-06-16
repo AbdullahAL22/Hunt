@@ -53,6 +53,7 @@ img {
 }
 
 .mnu .wrapper .tbar {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -61,7 +62,6 @@ img {
 .mnu .wrapper .tbar .menu ul {
     display: flex;
     flex-flow: row nowrap;
-    margin-left: 434px;
 }
 
 .mnu .wrapper .tbar .menu ul li {
@@ -89,16 +89,16 @@ img {
     position: relative;
 }
 
-.mb {
+span {
     width: 47px;
     height: 3px;
     background: var(--ci);
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     border-radius: 5px;
     position: absolute;
     top: 111px;
     left: 0;
-    transition: all linear 0.3s;
+    transition: all linear 0.6s;
 }
 
 .mnu .wrapper .tbar .menu ul li:hover a {
@@ -106,13 +106,24 @@ img {
 }
 
 .mnu-fix {
+    border-bottom: 1px solid rgb(88, 73, 31);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    height: 60px;
     z-index: 5;
     background: rgba(31, 31, 31, 0.815);
     animation: smooth 1s ease-in-out;
+}
+
+.mnu-fix .wrapper .tbar .menu ul li {
+    position: relative;
+}
+
+.mnu-fix .wrapper .tbar .menu ul li span {
+    position: absolute;
+    top: 85px;
 }
 
 @keyframes smooth {
@@ -122,6 +133,25 @@ img {
     100% {
         top: 0px;
     }
+}
+
+.top {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 50px;
+    right: 60px;
+    background: rgba(172, 204, 28, 0.795);
+    cursor: pointer;
+    z-index: 5;
+    display: none;
+}
+
+.top i {
+    color: #fff;
+    font-size: 30px;
+    padding: 10px;
 }
 
 
