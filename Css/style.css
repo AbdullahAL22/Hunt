@@ -407,7 +407,7 @@ img {
 }
 
 .pii .wrapper .border .b:hover {
-    box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.3);
+    filter: drop-shadow(-1px 3px 4px rgba(148, 148, 148, 0.678));
 }
 
 .pii .wrapper .border .b:hover .c {
@@ -415,8 +415,21 @@ img {
 }
 
 .piii {
-    background: url(../Images/back2.png) no-repeat center / cover;
+    background: url(../Images/portfolio-bg.jpg) no-repeat center / cover;
     clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0% 100%);
+    background-attachment: fixed;
+    position: relative;
+}
+
+.piii::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #111111cc;
+    z-index: -1;
 }
 
 .piii .wrapper .head {
@@ -430,10 +443,17 @@ img {
 }
 
 .piii .wrapper .items {
+    width: 100%;
     margin-top: 57px;
     margin-bottom: 152px;
     display: flex;
     flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.piii .wrapper .items .cl {
+    margin-right: 15px;
+    margin-left: 15px;
 }
 
 .piii .wrapper .items .i {
@@ -470,6 +490,7 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    cursor: pointer;
     transition: all ease-in-out 0.5s;
 }
 
@@ -495,25 +516,33 @@ img {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    width: 1170px;
+    justify-content: center;
+    width: 100%;
 }
 
 .piv .wrapper .cnt i {
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    color: #111111ad;
     border: 1px solid #000;
     font-size: 20px;
     box-sizing: border-box;
     padding: 9px 10px;
     transition: all linear 0.5s;
     position: relative;
+    cursor: pointer;
+    transition: all ease 0.6s;
 }
 
-.piv .wrapper .cnt i::after {
+.piv .wrapper .cnt i:hover {
+    color: #111111;
+}
+
+.slick-prev::after {
     content: '';
     width: 1px;
-    height: 388px;
+    height: 845px;
     box-sizing: border-box;
     position: absolute;
     top: 42px;
@@ -528,68 +557,28 @@ img {
     background-color: var(--ci);
 }
 
-.piv .wrapper .cnt .box {
-    margin-top: 30px;
+.box {
+    width: 100%;
+    height: 250px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     display: flex;
-    flex-flow: row nowrap;
-    justify-items: flex-end;
     align-items: center;
-    z-index: 1;
-    transition: all ease-in-out 0.6s;
+    justify-content: flex-end;
 }
 
-.piv .wrapper .cnt .box .sh {
-    transition: all ease-in-out 0.6s;
+.bii {
+    justify-content: flex-start;
 }
 
-.piv .wrapper .cnt .box:hover .sh {
-    box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.3);
+.bii .bpr::before {
+    top: 102px;
+    left: 459px;
+    transform: rotate(45deg);
 }
 
-.piv .wrapper .cnt .box .mid {
-    transition: all ease-in-out 0.6s;
-}
-
-.piv .wrapper .cnt .box .mid img {
-    transition: all ease-in-out 0.6s;
-}
-
-.piv .wrapper .cnt .box:hover .mid {
-    width: 100px;
-    height: 100px;
-    background: var(--ci);
-}
-
-.piv .wrapper .cnt .box:hover .mid img {
-    padding: 16px 19px;
-    width: 59px;
-}
-
-.box:hover .ttl {
-    font-weight: 550;
-}
-
-.box:hover .mid {
-    margin: 0 65px;
-}
-
-.mid #ici {
-    width: 47px;
-}
-
-#three img {
-    width: 38px;
-    padding: 17px 16px;
-}
-
-.box:hover #three img {
-    width: 48px;
-    padding: 27px 26px;
-}
-
-.cnt .box:hover .mid #ici {
-    width: 60px;
-    padding: 27px 21px;
+.bii .bpr .des {
+    text-align: right;
 }
 
 .ttl {
@@ -601,49 +590,11 @@ img {
     transition: all ease-in-out 0.8s;
 }
 
-.mid {
-    width: 70px;
-    height: 70px;
-    background: #eeeeee;
-    box-sizing: border-box;
-    border-radius: 50%;
-    /* position: relative;
-    left: 50%;
-    top: 105px;
-    transform: translateX(-50%); */
-}
-
-.mid img {
-    padding: 17px 12px;
-}
-
-.three img {
-    padding: 18px 17px;
-}
-
-
-/* .piv .wrapper .cnt .box .mid .parti {
-    position: absolute;
-    top: 0;
-    left: -80px;
-}*/
-
-.partii {
-    margin-right: -354px;
+.bpr {
     width: 470px;
     background: #eeeeee;
     position: relative;
-}
-
-.partii .ind {
-    position: absolute;
-    top: 102px;
-    left: -8px;
-    transform: rotate(45deg);
-    width: 16px;
-    height: 16px;
-    border-radius: 2px;
-    background: #eeeeee;
+    transition: all linear 0.5s;
 }
 
 .des {
@@ -655,39 +606,173 @@ img {
     color: #444444;
 }
 
-.box .mid {
-    margin: 0px 80px;
+.bpr::before {
+    content: '';
+    position: absolute;
+    top: 102px;
+    left: -12px;
+    transform: rotate(45deg);
+    width: 22px;
+    height: 22px;
+    border-radius: 2px;
+    background: #eeeeee;
+    z-index: 2;
 }
 
-.two {}
-
-.two .partone {
-    margin-left: -322px;
-    width: 470px;
+.mid {
+    width: 70px;
+    height: 70px;
+    margin: 0 80px;
     background: #eeeeee;
+    box-sizing: border-box;
+    border-radius: 50%;
+    transition: all linear 0.5s;
+}
+
+.mid img {
+    width: 47px;
+    padding: 17px 12px;
+    transition: all linear 0.5s;
+}
+
+.box:hover .ttl {
+    font-weight: 600;
+}
+
+.box:hover .bpr {
+    filter: drop-shadow(-1px 3px 4px rgba(148, 148, 148, 0.678));
+}
+
+.box:hover .mid {
+    width: 100px;
+    height: 100px;
+    margin: 0 65px;
+    background: var(--ci);
+}
+
+.box:hover .mid img {
+    width: 60px;
+    padding: 27px 21px;
+}
+
+img.icii {
+    width: 40px;
+    padding: 12px 14px;
+}
+
+.box:hover img.icii {
+    padding: 15px 19px;
+}
+
+img.iciii {
+    width: 38px;
+    padding: 17px 16px;
+}
+
+.box:hover img.iciii {
+    width: 48px;
+    padding: 27px 26px;
+}
+
+.pv {
+    background: url(../Images/backbanner.jpg) no-repeat center / cover;
+    clip-path: polygon(0 8%, 100% 0, 100% 92%, 0% 100%);
+    background-attachment: fixed;
     position: relative;
 }
 
-.two .partone .ind {
+.pv::before {
+    content: '';
+    width: 100%;
+    height: 100%;
     position: absolute;
-    top: 102px;
-    right: -8px;
-    transform: rotate(45deg);
-    width: 16px;
-    height: 16px;
-    border-radius: 2px;
-    background: #eeeeee;
+    top: 0;
+    left: 0;
+    background: #111111be;
+    z-index: -2;
 }
 
-.two .mid img {
-    width: 44px;
-    padding: 11px 12px;
+.pv .wrapper {
+    margin: 153px 0 148px 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-.last .parti {
-    margin: 0;
+.pv .wrapper .ti {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+    overflow: hidden;
+    width: 100px;
 }
 
-.last .partii {
-    margin-right: -331px;
+.pv .wrapper .ti i {
+    width: 40px;
+    height: 40px;
+    color: #e0e0e0da;
+    border-radius: 50%;
+    border: 1px solid #d1d1d1;
+    box-sizing: border-box;
+    padding: 12px 12px;
+    cursor: pointer;
+    box-sizing: border-box;
+    outline: none;
+    transition: all linear 0.5s;
+}
+
+.pv .wrapper .ti .up {
+    position: relative;
+}
+
+.pv .wrapper .ti .up::after {
+    content: '';
+    position: absolute;
+    top: 42px;
+    left: 47%;
+    box-sizing: border-box;
+    width: 1px;
+    height: 482px;
+    transform: translateX(51%);
+    border-right: 1px dashed rgb(236, 236, 236);
+}
+
+.pv .wrapper .ti i:hover {
+    color: #252525;
+    border-color: transparent;
+    background: #ffd94fe1;
+    outline: none;
+}
+
+.pv .wrapper .ti .team {
+    width: 100px;
+    height: 100px;
+    background: rgb(197, 197, 197);
+    border-radius: 50%;
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.pv .wrapper .ti .team img {
+    width: 88px;
+    padding: 14px 4px;
+}
+
+.pv .wrapper .ti .team {
+    position: relative;
+    margin: 30px 0;
+}
+
+.pv .wrapper .ti .team::before {
+    content: '';
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(211, 211, 211, 0.651);
 }

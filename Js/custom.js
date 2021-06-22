@@ -4,15 +4,36 @@ $(document).ready(function() {
         $(this).addClass('mb').siblings().removeClass('mb');
     });
 
-    // $(".vertical").slick({
-    //     dots: false,
-    //     vertical: true,
-    //     centerMode: true,
-    //     slidesToShow: infinity,
-    //     slidesToScroll: 1,
-    //     infinity: true,
-    //     autoPlay: true,
-    // });
+    $(".items").slick({
+        arrows: false,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 4000,
+    });
+
+    $(".ti").slick({
+        centerMode: true,
+        vertical: true,
+        centerPadding: '0px',
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        prevArrow: '<i class="fas fa-chevron-up up"></i>',
+        nextArrow: '<i class="fas fa-chevron-down"></i>',
+
+    });
+
+    $(".vertical").slick({
+        vertical: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        prevArrow: '<i class="fas fa-chevron-up slick-prev"></i>',
+        nextArrow: '<i class="fas fa-chevron-up down slick-next" style="transform: rotate(180deg);"></i>',
+    });
 
 
     $("#slider1").sliderResponsive({
