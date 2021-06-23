@@ -705,8 +705,8 @@ img.iciii {
     align-items: center;
     justify-content: center;
     flex-flow: column nowrap;
-    overflow: hidden;
     width: 100px;
+    margin-left: 33px;
 }
 
 .pv .wrapper .ti i {
@@ -734,7 +734,7 @@ img.iciii {
     left: 47%;
     box-sizing: border-box;
     width: 1px;
-    height: 482px;
+    height: 540px;
     transform: translateX(51%);
     border-right: 1px dashed rgb(236, 236, 236);
 }
@@ -754,25 +754,114 @@ img.iciii {
     box-sizing: border-box;
     overflow: hidden;
     z-index: 1;
+    position: relative;
+    margin: 30px 0;
+    transition: all linear 0.6s;
 }
 
 .pv .wrapper .ti .team img {
     width: 88px;
-    padding: 14px 4px;
-}
-
-.pv .wrapper .ti .team {
-    position: relative;
-    margin: 30px 0;
+    padding: 14px 6px;
+    transition: all ease-in-out 0.6s;
 }
 
 .pv .wrapper .ti .team::before {
     content: '';
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     position: absolute;
     top: 0;
     left: 0;
     background: rgba(211, 211, 211, 0.651);
+    transition: all linear 0.6s;
+    opacity: 1;
+    visibility: visible;
+}
+
+.pv .wrapper .ti .slick-center {
+    transition: all ease-in-out 0.4s;
+}
+
+.slick-center .team::before {
+    opacity: 0;
+    visibility: hidden;
+    transition: all ease-in-out 0.4s;
+}
+
+.slick-center img {
+    background: #ffd12d;
+    transform: scale(1.1);
+    transition: all ease-in-out 0.4s;
+}
+
+.pv .wrapper .tii {
+    width: 848px;
+    margin-left: 82px;
+}
+
+.pv .wrapper .tii .di {
+    width: 833;
+    margin-left: 14px;
+    background: #f1f1f1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    padding: 0 30px 50px 33px;
+    position: relative;
+}
+
+.pv .wrapper .tii .di::before {
+    content: '';
+    width: 28px;
+    height: 28px;
+    background: #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: -9px;
+    transform: translateY(-50%) rotate(45deg);
+    border-radius: 4px;
+    z-index: -1;
+}
+
+.pv .wrapper .tii .di .name {
+    font-family: var(--fi);
+    font-weight: 500;
+    font-size: 20px;
+    text-transform: capitalize;
+    padding-top: 55px;
+}
+
+.pv .wrapper .tii .di .rate {
+    margin-top: -3px;
+}
+
+.pv .wrapper .tii .di .rate i {
+    color: var(--ci);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.pv .wrapper .tii .di .title {
+    font-family: var(--fi);
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: 4px;
+}
+
+.pv .wrapper .tii .di .details {
+    font-family: var(--fii);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    margin-top: 16px;
+    width: 771px;
+}
+
+.pv .wrapper .tii .di .signature {
+    font-weight: 400;
+    font-size: 20px;
+    align-self: end;
+    padding-top: 20px;
+    margin-right: 75px;
 }

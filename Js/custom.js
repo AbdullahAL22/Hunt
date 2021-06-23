@@ -14,15 +14,25 @@ $(document).ready(function() {
 
     $(".ti").slick({
         centerMode: true,
+        centerPadding: '30px',
         vertical: true,
-        centerPadding: '0px',
         slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 4000,
+        autoplaySpeed: 6000,
         prevArrow: '<i class="fas fa-chevron-up up"></i>',
         nextArrow: '<i class="fas fa-chevron-down"></i>',
+        asNavFor: '.tii',
+    });
 
+    $(".tii").slick({
+        arrows: false,
+        vertical: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 6000,
+        asNavFor: '.ti',
     });
 
     $(".vertical").slick({
