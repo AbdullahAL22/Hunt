@@ -28,10 +28,12 @@ $(document).ready(function() {
     $(".tii").slick({
         arrows: false,
         vertical: true,
+        // fade: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 6000,
+        // fadeSpeed: 6000,
         asNavFor: '.ti',
     });
 
